@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Surprise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #e91e63;
+            transform: scale(1.1);
+        }
+        .surprise {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffe0f2;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .surprise-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="mi.jpg" alt="iloveyou" class="header-image" width="300" height="300">
+        <h1>I'm really sorry po mylove</h1>
+        <p>Click any button below to reveal a surprise for you po Mylove❤️</p>
+        <button class="button" onclick="revealSurprise('I find myself reflecting on the incredible journey we’ve shared, despite the miles that separate us. Each day without you reminds me just how deeply I cherish our time together, and how lucky I am to have you in my life.Distance can be challenging, and there are moments when the loneliness feels overwhelming. Yet, I find comfort in knowing that our love is strong enough to bridge any gap. Your laughter, your kindness, and your unwavering support keep me going, even on the toughest days. Every text, every call, and every video chat feels like a piece of you is right here with me, making the distance a little more bearable.I often dream about our future together. I imagine the day when we can close this gap, when I can hold your hand again and see your smile in person. Until then, I promise to keep nurturing our bond, to share my world with you, and to support you in every endeavor. Our love is more than just physical presence; its a deep connection that transcends time and space.Thank you for being my rock and for believing in us. I cant wait for the day we can create new memories together, exploring new places and enjoying the simple moments that mean so much. Until then, remember that you are always in my heart, and I am counting down the months until were together again.')">mylove</button>
+        <button class="button" onclick="revealSurprise('I want you to know just how deeply you are etched in my heart. Every day, I feel the weight of our distance, but I also feel the incredible strength of our love. You are my anchor, my confidant, and my greatest joy.Being apart is not easy, but it has shown me just how much you mean to me. I cherish every moment we’ve shared, every laugh, every late-night conversation, and even the quiet moments where just being together felt perfect. You bring out the best in me, and I am endlessly grateful for your love and support.I want you to know that no matter how far apart we are, my commitment to you remains unwavering. I admire your strength and resilience, and I am constantly inspired by the way you handle life’s challenges. You make me want to be a better person, and I aspire to give you the love you truly deserve.There are moments when I miss you so much it feels like a physical ache. I long for the day when I can hold you close, feel your warmth, and look into your eyes without a screen between us. But until that day comes, I want you to remember that my love for you grows deeper with each passing moment.You are my dream, my partner, and my home. I am so lucky to have you in my life, and I can’t wait for all the adventures that still lie ahead for us. Thank you for being you and for loving me so deeply.')">myleen</button>
+        <button class="button" onclick="revealSurprise(' I feel an overwhelming sense of gratitude and love. Even though miles may separate us, my heart is always with you. I want you to know just how much you mean to me and how deeply I love you.Every day, I find myself reflecting on the beautiful moments weve shared. Your laughter, your kindness, and the way you understand me make my heart swell with joy. Even in our moments apart, you are my anchor, my inspiration, and my greatest happiness.Distance can be tough, and there are days when I wish I could just reach out and hold your hand, share a laugh, or simply be by your side. But through it all, my love for you only grows stronger. It’s a reminder of how special our connection is and how worth it this journey truly is.I love the way we support each other, how we share our dreams and fears, and how we find ways to make each other smile, even when we’re far apart. You have a beautiful way of bringing light into my life, and I can’t imagine my world without you in it.I believe in us and the love we share, and I know that this distance is just a temporary challenge. I look forward to the day when we can create new memories together, but until then, I want you to remember that I love you more than words can express.Thank you for being you—wonderful, loving, and incredibly patient. I’m so lucky to have you in my life, and I can’t wait to see what the future holds for us.')">iloveyou</button>
+        <button class="button" onclick="revealSurprise('I hope this message finds you well, though I know I might have caused you some distress recently. I’ve been thinking a lot about what happened, and I want to sincerely apologize for the prank I pulled. It was thoughtless of me, and I never intended to hurt you or make you feel uncomfortable.You mean the world to me, and the last thing I want is to jeopardize our amazing connection with a silly joke that crossed the line. I realize now that what I thought would be a light-hearted moment instead caused you pain, and for that, I am truly sorry.Being apart from you is hard enough without adding misunderstandings. I want you to know how much I value our relationship and how deeply I care about your feelings. Your happiness is incredibly important to me, and I regret any moment of doubt I may have caused.I’ve learned from this experience, and I promise to be more mindful of your feelings in the future. I hope you can forgive me and we can move past this together. You deserve all the love and respect in the world, and I want to make sure I’m always giving you that.I miss you dearly and cant wait for the day we can be together again. Until then, please know that Im here for you, ready to listen and make things right.')">sorry</button>
+        
+        <div id="surpriseMessage" class="hidden surprise"></div>
+        <img id="surpriseImage" class="hidden surprise-image"  alt="">
+    </div>
+
+    <script>
+        function revealSurprise(message, imageUrl) {
+            const surpriseDiv = document.getElementById('surpriseMessage');
+            const surpriseImage = document.getElementById('surpriseImage');
+
+            surpriseDiv.textContent = message;
+            surpriseDiv.classList.remove('hidden');
+            surpriseDiv.classList.add('show');
+            surpriseImage.src = imageUrl;
+            surpriseImage.classList.remove('hidden');
+            surpriseImage.classList.add('show');
+        }
+    </script>
+
+</body>
+</html>
